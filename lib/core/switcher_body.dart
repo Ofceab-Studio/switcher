@@ -25,6 +25,8 @@ class SwitcherBody extends StatelessWidget {
     required this.switcherButtonAngleTransform,
     this.buttonBackgroundColor,
     this.borderColor,
+    this.iconWidgetOn,
+    this.iconWidgetOff,
   }) : super(key: key);
 
   final double value;
@@ -34,6 +36,8 @@ class SwitcherBody extends StatelessWidget {
   final Widget? labelOff;
   final IconData iconOn;
   final IconData iconOff;
+  final Widget? iconWidgetOn;
+  final Widget? iconWidgetOff;
   final double switcherRadius;
   final Color transitionColor;
   final Color? buttonBackgroundColor;
@@ -63,6 +67,8 @@ class SwitcherBody extends StatelessWidget {
           SwitcherButtonTransform(
             value: value,
             iconOn: iconOn,
+            iconWidgetOn: iconWidgetOn,
+            iconWidgetOff: iconWidgetOff,
             transitionColor: transitionColor,
             switcherButtonSize: switcherButtonSize,
             switcherButtonRadius: switcherButtonRadius,
