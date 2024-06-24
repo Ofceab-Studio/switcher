@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:switcher/core/switcher_body.dart';
 
@@ -27,6 +25,8 @@ class Switcher extends StatefulWidget {
   final Function? onTap;
   final Function? onDoubleTap;
   final Function? onSwipe;
+  final Widget? labelOn;
+  final Widget? labelOff;
 
   final double _width;
   final double _height;
@@ -41,6 +41,8 @@ class Switcher extends StatefulWidget {
       this.switcherButtonColor = Colors.white,
       this.switcherRadius = 50,
       this.switcherButtonRadius = 50,
+      this.labelOff,
+      this.labelOn,
       this.switcherButtonAngleTransform = 0,
       this.enabledSwitcherButtonRotate = true,
       this.switcherButtonBoxShape = BoxShape.circle,
@@ -223,6 +225,8 @@ class _SwitcherState extends State<Switcher>
         width: widget._width,
         height: widget._height,
         iconOn: widget.iconOn,
+        labelOff: widget.labelOff,
+        labelOn: widget.labelOn,
         iconOff: widget.iconOff,
         switcherRadius: switcherRadius,
         transitionColor: transitionColor,
