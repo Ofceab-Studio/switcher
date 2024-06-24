@@ -23,6 +23,8 @@ class SwitcherBody extends StatelessWidget {
     required this.switcherButtonPadding,
     required this.switcherButtonIconSize,
     required this.switcherButtonAngleTransform,
+    this.buttonBackgroundColor,
+    this.borderColor,
   }) : super(key: key);
 
   final double value;
@@ -34,6 +36,8 @@ class SwitcherBody extends StatelessWidget {
   final IconData iconOff;
   final double switcherRadius;
   final Color transitionColor;
+  final Color? buttonBackgroundColor;
+  final Color? borderColor;
   final double switcherButtonSize;
   final Color switcherButtonColor;
   final double switcherButtonRadius;
@@ -49,7 +53,8 @@ class SwitcherBody extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-        color: transitionColor,
+        border: borderColor != null ? Border.all(color: borderColor!) : null,
+        color: buttonBackgroundColor ?? transitionColor,
         borderRadius: BorderRadius.circular(switcherRadius),
       ),
       child: Stack(

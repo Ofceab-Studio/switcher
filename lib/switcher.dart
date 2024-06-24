@@ -27,6 +27,8 @@ class Switcher extends StatefulWidget {
   final Function? onSwipe;
   final Widget? labelOn;
   final Widget? labelOff;
+  final Color? buttonBackgroundColor;
+  final Color? borderColor;
 
   final double _width;
   final double _height;
@@ -55,7 +57,9 @@ class Switcher extends StatefulWidget {
       this.onTap,
       this.onDoubleTap,
       this.onSwipe,
-      required this.onChanged})
+      required this.onChanged,
+      this.buttonBackgroundColor,
+      this.borderColor})
       : _width = size == SwitcherSize.small
             ? 55
             : size == SwitcherSize.medium
@@ -227,6 +231,8 @@ class _SwitcherState extends State<Switcher>
         iconOn: widget.iconOn,
         labelOff: widget.labelOff,
         labelOn: widget.labelOn,
+        borderColor: widget.borderColor,
+        buttonBackgroundColor: widget.buttonBackgroundColor,
         iconOff: widget.iconOff,
         switcherRadius: switcherRadius,
         transitionColor: transitionColor,
